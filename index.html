@@ -27,7 +27,7 @@
 
     /* ===== Layout ===== */
     .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-    .section { padding: 70px 0; }
+    .section { padding: 10px 0; }
     .border-top { border-top: 1px solid var(--border); }
 
     /* ===== Navbar ===== */
@@ -122,11 +122,11 @@
       <a href="#hero" class="brand">Sangam Shrestha</a>
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="#" class="nav-cta" id="resumeLink">Resume</a>
+        <a href="resume.pdf" class="nav-cta" id="resumeLink">Download Resume</a>
       </div>
     </div>
   </nav>
@@ -136,10 +136,8 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Software Engineer</div>
-        <h1>Building scalable, secure, cloud‑ready apps with <span style="text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--blue)">Java</span> &amp; <span style="text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--blue)">Angular</span></h1>
-        <p>4+ years delivering full‑stack apps, microservices, and PWAs across enterprise and academic settings. Strong in Java/Spring Boot, .NET, and modern Angular.</p>
         <div class="cta-row">
-          <a href="#projects" class="btn btn-primary">See Projects
+          <a href="#projects" class="btn btn-primary">View Projects
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
           <a target="_blank" href="https://github.com/sangamsthxa" class="btn btn-outline">GitHub</a>
@@ -170,22 +168,7 @@
     </div>
   </header>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section border-top">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Featured Projects</h2>
-        <a target="_blank" href="https://github.com/sangamsthxa">View all on GitHub
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-        </a>
-      </div>
-      <div class="grid cols-2" id="projectGrid">
-        <!-- Cards injected by JS below -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT (Left: photo upload) ===== -->
+  <!-- ===== ABOUT===== -->
   <section id="about" class="section border-top">
     <div class="container">
       <div class="grid cols-2">
@@ -195,21 +178,18 @@
             <div class="card">
               <div class="card-body">
                 <div style="display:grid;gap:12px">
-                  <div style="position:relative;width:100%;aspect-ratio:4 / 3;border-radius:14px;overflow:hidden">
-                    <img id="avatarImg" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=80" alt="Your portrait" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+                  <div>
+                    <img id="avatarImg" src="profile.jpg" />
                   </div>
-                  <label style="font-size:14px;color:#2c3e7a">Upload photo</label>
-                  <input id="avatarInput" type="file" accept="image/*" />
-                  <p style="font-size:12px;color:#234">JPG/PNG recommended. Preview updates instantly and stays local.</p>
                 </div>
               </div>
             </div>
-            <p style="color:#2c3e7a;margin-top:12px;font-size:14px">MS in CS @ East Tennessee State University (GPA 3.9)</p>
+            <p style="color:#2c3e7a;margin-top:12px;font-size:18px">MS in CS @ East Tennessee State University (GPA 3.9)</p>
           </div>
         </div>
-        <div>
-          <p>
-            I’m a software engineer with 6+ years of experience designing and delivering full‑stack web applications, scalable APIs, and cloud‑native services. I specialize in Java/Spring Boot, .NET, and AWS, with a strong foundation in system architecture and microservices. Recently, I led a bilingual PWA for special education programs and previously shipped a multilingual Real Estate ERP used by global clients.
+        <div style="align-content: center;">
+          <p style="text-align: justify;">
+            I’m a software engineer with 4+ years of experience designing and delivering full‑stack web applications, scalable APIs, and cloud‑native services. I specialize in Java/Spring Boot, .NET, and AWS, with a strong foundation in system architecture and microservices. Recently, I led a bilingual PWA for special education programs and previously shipped a multilingual Real Estate ERP used by global clients.
           </p>
           <div class="about-points">
             <div class="about-pill">99.9% uptime across low‑bandwidth regions</div>
@@ -222,6 +202,14 @@
     </div>
   </section>
 
+  <!-- ===== SKILLS ===== -->
+<section id="skills" class="section border-top">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:16px">Skills</h2>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
   <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="section border-top">
     <div class="container">
@@ -229,50 +217,137 @@
       <div class="grid cols-2">
         <article class="card exp-item">
           <div class="card-body">
-            <h3 style="margin:0">Software Engineer · EDU Systems</h3>
-            <p style="color:#234;margin-top:6px">2022 – 2024</p>
+            <h3 style="margin:0">Software Engineer</h3>
+              <strong>East Tennessee State University</strong>
+              <p>Johnson City, TN</p>
+            <p style="color:#234;margin-top:6px">Jun 2025 – Present</p><br/>
+            <strong>Special Education PWA Initiative</strong>
+            <p>Led the development of a Progressive Web App (PWA) to digitize and centralize Individualized Education
+              Programs (IEPs) for over 25 schools. Focused on building resilient, offline-capable architecture for remote
+              regions with limited connectivity. Integrated translation services and containerized the deployment process to
+              ensure a scalable and maintainable infrastructure.</p><br/>
+            <strong>Responsibilities</strong>
             <ul class="list">
-              <li>Led bilingual PWA for special education (offline‑first, AWS EC2)</li>
-              <li>Dockerized services; improved incident MTTR by 30%</li>
-            </ul>
+              <li>Developed a full-stack PWA using ASP .NET and MVC Framework to digitize special education workflows
+                and ensure real-time access for school administrators.</li>
+              <li>Integrated Google Cloud Translation API to support bilingual content delivery in English and Marshallese,
+                improving accessibility across user roles.</li>
+                <li>Deployed the application using Docker and Docker Compose on AWS EC2 instances, enabling scalable and
+                  fault-tolerant infrastructure.</li>
+                  <li>Designed backend services to support document uploads, role-based access control, and audit logs.</li>
+                  <li>Set up centralized logging and performance monitoring via AWS CloudWatch, cutting debugging time by
+                    40% and resolving incidents 30% faster.</li>
+                  <li>Ensured 99.9% application uptime across diverse geographical locations, including low-bandwidth regions.
+                    Collaborated with educators, IT staff, and administrators to gather requirements and iteratively refine system
+                    features.</li>
+                    <li>Documented technical workflows using Confluence and deployment scripts for future maintenance and
+                      knowledge transfer.</li>
+            </ul> <br/>
+            <strong>Technological Environment</strong>
+            <p>C#, JavaScript, .NET, MVC Framework, Google Cloud Translation API, Docker, Docker Compose, AWS EC2,
+              AWS CloudWatch, Confluence, PostgreSQL, Agile</p>
           </div>
         </article>
         <article class="card exp-item">
           <div class="card-body">
-            <h3 style="margin:0">Backend Engineer · RealEstateTech</h3>
-            <p style="color:#234;margin-top:6px">2019 – 2022</p>
+            <h3 style="margin:0">Graduate Teaching Assistant</h3>
+            <strong>East Tennessee State University</strong>
+              <p>Johnson City, TN</p>
+            <p style="color:#234;margin-top:6px">Aug 2023 – May 2025</p><br/>
+
+            <strong>Undergraduate Programming & Web Development Instruction</strong>
+            <p>Served as a teaching assistant for foundational and advanced computer science courses, supporting over 100
+              undergraduate students. Delivered lab sessions, mentored students through personalized academic support, and
+              contributed to curriculum development with a focus on real-world coding practices and career readiness.</p><br/>
+            <strong>Responsibilities</strong>
             <ul class="list">
-              <li>Spring Boot microservices; JWT + RBAC</li>
-              <li>SQL performance: 15s → under 3s via query/index tuning</li>
-            </ul>
+              <li>Instructed students in C#, .NET Core, JavaScript, and web development fundamentals through hands-on
+                labs and live demos.</li>
+              <li>Facilitated weekly lab sessions and guided students through project-based learning, increasing overall
+                engagement and retention.</li>
+                <li>Conducted one-on-one code reviews and provided structured feedback to improve student programming
+                  proficiency.</li>
+                  <li>Authored reusable code samples, slide decks, and documentation for core concepts such as MVC
+                    architecture, version control, and debugging.</li>
+                  <li>Mentored and onboarded 3 new teaching assistants, promoting consistency in instructional support across
+                    multiple sections.</li>
+                  <li>Enhanced student grades from C- to B by delivering lab-based learning and personalized coaching.</li>
+                    <li>Supported grading, project evaluation, and academic consultations in collaboration with faculty instructors.</li>
+            </ul><br/>
+            <strong>Technological Environment</strong>
+            <p>C#, .NET Core, JavaScript, HTML, CSS, Git, Visual Studio, MVC Pattern, Debugging, Microsoft Office,
+              Academic Mentorship, Agile Teaching Methods</p>
+          </div>
+        </article>
+        <article class="card exp-item">
+          <div class="card-body">
+            <h3 style="margin:0">Software Engineer</h3>
+            <strong>BMP Infology Pvt. Ltd.</strong>
+            <p>Kathmandu, Nepal</p>
+            <p style="color:#234;margin-top:6px">Nov 2018 – Jun 2023</p><br/>
+            <strong>Real Estate ERP System</strong>
+            <p>Collaborated with a team to build a cross-platform ERP solution to manage real estate operations, including
+              property listings, transactions, and user roles. Led the full-stack development process from backend APIs to a
+              responsive Angular-based UI. Migrated on-premise infrastructure to AWS, reduced operational costs, and
+              completed multilingual features to expand product usability across global clients. Introduced modular
+              architecture and API optimizations that significantly improved system performance and user experience.</p><br/>
+            <strong>Responsibilities</strong>
+            <ul class="list">
+              <li>Engineered backend microservices in Java using Spring Boot and Hibernate for property management and
+                transaction processing modules.</li>
+              <li>Increased optimized SQL queries for high-traffic endpoints, reducing data retrieval time from 15+ seconds
+                to under 3 seconds.</li>
+                <li>Built a responsive Angular UI with Material Design and integrated multilingual support (English, Chinese,
+                  Japanese) using Angular i18n features.</li>
+                  <li>Transformed monolithic architecture into microservices and executed AWS migration, cutting server
+                    expenses by 25%.</li>
+                  <li>Deployed Dockerized services using Docker Compose for staging and production environments.</li>
+                  <li>Created and maintained REST APIs for listing creation, transaction tracking, and user role assignment.</li>
+                    <li>Contributed cross-functional code reviews and testing rituals in Agile sprints, decreasing critical defects by
+                      30% quarter-over-quarter.</li>
+                      <li>Implemented JWT-based authentication and role-based access control for enhanced data security.</li>
+                      <li>Maintained over 1,000 active property listings and supported 500+ monthly transactions without system
+                        downtime.</li>
+                        <li>Integrated log monitoring and custom alerts using AWS CloudWatch, improving uptime by 25% through
+                          early detection of critical issues.</li>
+            </ul> <br/>
+            <strong>Technological Environment</strong>
+            <p>Java, Spring Boot, Hibernate, REST APIs, Angular, Material Design, TypeScript, MySQL, AWS (EC2, S3,
+              RDS, CloudWatch), Docker, Docker Compose, JWT, SQL, Agile, Git, GitHub</p>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section border-top">
-    <div class="container">
-      <h2 class="section-title" style="margin-bottom:16px">Skills</h2>
-      <div class="skills-grid" id="skillsGrid"></div>
+ <!-- ===== PROJECTS ===== -->
+ <section id="projects" class="section border-top">
+  <div class="container">
+    <div class="section-head" style="padding-bottom: 15px;">
+      <h2 class="section-title">Featured Projects</h2>
+      <a target="_blank" href="https://github.com/sangamsthxa">View all on GitHub
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
     </div>
-  </section>
+    <div class="grid cols-2" id="projectGrid">
+      <!-- Cards injected by JS below -->
+    </div>
+  </div>
+</section>
+
+
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section border-top">
-    <div class="container contact-grid">
-      <div>
+  <section id="contact" class="section border-top" >
+    <div class="container">
+      <div style="text-align: center;">
         <h2 class="section-title">Let’s build something</h2>
-        <p style="color:#234;margin-top:8px;max-width:60ch">I’m open to Software Engineer roles (Java/Spring Boot, .NET, AWS, full‑stack). If you have a role, project, or idea you’d like to discuss, drop a note.</p>
-        <div class="cta-row">
+        <p style="color:#234;margin-top:8px">I’m open to Software Engineer roles (Java/Spring Boot, .NET, AWS, full‑stack). If you have a role, project, or idea you’d like to discuss, drop an email.</p>
+        <div>
           <a href="mailto:sthasngm88@gmail.com" class="btn btn-primary">Email Me</a>
-          <a href="https://www.linkedin.com/in/sangamstha" target="_blank" class="btn btn-outline">LinkedIn</a>
-          <a href="https://github.com/sangamsthxa" target="_blank" class="btn btn-outline">GitHub</a>
         </div>
-        <p style="margin-top:10px;color:#2c4a9a">Or call: <strong>+1 (555) 123‑4567</strong></p>
+        <p style="margin-top:10px;color:#2c4a9a">Or call: <strong>+1 (423) 672‑8789</strong></p>
       </div>
-      <form class="card" onsubmit="event.preventDefault(); alert('Thanks! This is a static demo.');">
+      <!-- <form class="card" onsubmit="event.preventDefault(); alert('Thanks! This is a static demo.');">
         <div class="card-body">
           <label>Name</label>
           <input class="input" placeholder="Your name" />
@@ -284,9 +359,8 @@
           <textarea class="input textarea" placeholder="What would you like to build?"></textarea>
           <div style="height:14px"></div>
           <button class="btn btn-primary" type="submit">Send</button>
-          <p style="font-size:12px;color:#2c3e7a;margin-top:8px">This is a static mockup. Wire up to a form backend or use mailto:.</p>
         </div>
-      </form>
+      </form> -->
     </div>
   </section>
 
@@ -304,11 +378,11 @@
   <script>
     // ===== Data =====
     const projects = [
-      { title: "Special Education PWA Initiative", summary: "Full‑stack PWA digitizing IEP workflows for 25+ schools with bilingual access (English/Marshallese), resilient offline support, and containerized AWS deployments.", bullets:["Built with ASP.NET MVC, role‑based access, audit logs","Google Cloud Translation API integration","Docker + AWS EC2, centralized logging via CloudWatch (−40% debug time)"], tech:["C#",".NET","JavaScript","Docker","AWS EC2","CloudWatch","PostgreSQL"], links:[{href:"#",label:"Case Study"}], image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" },
-      { title: "Real Estate ERP System", summary: "Cross‑platform ERP for listings, transactions, and roles. Migrated monolith → microservices; infra to AWS; added multilingual Angular UI.", bullets:["Spring Boot + Hibernate microservices","Query time ↓ 15s → under 3s via SQL optimizations","JWT auth, RBAC, 1,000+ active listings, 500+/mo transactions"], tech:["Java","Spring Boot","Angular","MySQL","AWS (EC2, S3, RDS)","Docker"], links:[{href:"#",label:"Demo (internal)"}], image:"laptodesktop.avif" },
-      { title: "Online Delivery Management System", summary: "Routing and dispatch platform using Mapbox + Dijkstra for shortest paths; secure JWT auth.", bullets:["Real‑time map and route optimization","Role‑based access and protected APIs"], tech:["Java","Spring Boot","Angular","Mapbox","JWT"], links:[{href:"https://github.com/sangamsthxa/OnlineDeliveryManagementSystem",label:"GitHub"}], image:"https://images.unsplash.com/photo-1524578271613-d550eacf6090?auto=format&fit=crop&w=900&q=80" },
-      { title: "Predictive Layoff Risk Assessment", summary: "ML model comparing Logistic Regression vs Decision Trees; 93% accuracy on internal dataset.", bullets:["Key features: tenure, performance score, location"], tech:["Python","Pandas","scikit‑learn"], links:[{href:"https://github.com/sthasangam/ML-Project",label:"GitHub"}], image:"https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=900&q=80" },
-      { title: "Airline Reviews Sentiment (DistilBERT)", summary: "NLP on 23,171 reviews; 84% accuracy; surfaced drivers like seat type, value, staff service.", bullets:["Cleaning, tokenization, fine‑tuning, evaluation"], tech:["Python","Transformers","PyTorch"], links:[{href:"https://github.com/sangamsthxa/Sentiment-Analysis-on-Airline-Reviews",label:"GitHub"}], image:"https://images.unsplash.com/photo-1494697536454-6f39e2cc1721?auto=format&fit=crop&w=900&q=80" }
+     // { title: "Special Education PWA Initiative", summary: "Full‑stack PWA digitizing IEP workflows for 25+ schools with bilingual access (English/Marshallese), resilient offline support, and containerized AWS deployments.", bullets:["Built with ASP.NET MVC, role‑based access, audit logs","Google Cloud Translation API integration","Docker + AWS EC2, centralized logging via CloudWatch (−40% debug time)"], tech:["C#",".NET","JavaScript","Docker","AWS EC2","CloudWatch","PostgreSQL"], links:[{href:"#",label:"Case Study"}], image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" },
+      //{ title: "Real Estate ERP System", summary: "Cross‑platform ERP for listings, transactions, and roles. Migrated monolith → microservices; infra to AWS; added multilingual Angular UI.", bullets:["Spring Boot + Hibernate microservices","Query time ↓ 15s → under 3s via SQL optimizations","JWT auth, RBAC, 1,000+ active listings, 500+/mo transactions"], tech:["Java","Spring Boot","Angular","MySQL","AWS (EC2, S3, RDS)","Docker"], links:[{href:"#",label:"Demo (internal)"}], image:"laptodesktop.avif" },
+      { title: "Online Delivery Management System", summary: "Collaborated on the design and launch of a Progressive Web App (PWA) that digitized and centralized Individualized Education Programs (IEPs) for over 25 schools. Worked closely with educators and developers to build an offline-first architecture supporting regions with limited internet access. Integrated translation services and containerized deployment to deliver a scalable, reliable, and maintainable platform tailored to the needs of diverse school communities.", tech:["Java","Spring Boot","Angular","Mapbox","JWT"],  links:[{href:"https://github.com/sangamsthxa/OnlineDeliveryManagementSystem",label:"GitHub"}], image:"delivery.jpeg" },
+      { title: "Airline Reviews Sentiment (DistilBERT)", summary: "Analyzed a dataset of 23,000+ airline reviews using Natural Language Processing (NLP) with DistilBERT, achieving 84% sentiment classification accuracy. Designed preprocessing pipelines, fine-tuned the model, and evaluated performance metrics to ensure robust results. Extracted key factors such as seat type, value for money, and staff service to better understand customer sentiment patterns.", tech:["Python","Pandas","scikit‑learn"], links:[{href:"https://github.com/sthasangam/ML-Project",label:"GitHub"}], image:"plane.jpg" },
+      { title: "Predictive Layoff Risk Assessment", summary: "Developed a predictive model to estimate employee layoff risk by performing extensive data cleaning and feature engineering to uncover the key factors influencing layoff decisions. Evaluated multiple machine learning algorithms—including Random Forest, Decision Tree, Logistic Regression, Gradient Boosting, Support Vector Machine, and Neural Networks—to determine the most effective approach for accurate forecasting.", tech:["Python","Transformers","PyTorch"],links:[{href:"https://github.com/sangamsthxa/Sentiment-Analysis-on-Airline-Reviews",label:"GitHub"}], image:"predictive.avif" }
     ];
 
     const skills = [
@@ -378,7 +452,6 @@
             <div class="card-body">
               <h3>${p.title}</h3>
               <p>${p.summary}</p>
-              <ul class="list">${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
               <div class="chip-row">${p.tech.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
               <div class="link-row">${p.links.map(l=>`<a href="${l.href}" target="_blank">${l.label}</a>`).join('')}</div>
             </div>
