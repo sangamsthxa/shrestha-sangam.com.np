@@ -119,7 +119,7 @@
    <!-- ===== NAV ===== -->
    <nav class="nav">
     <div class="container nav-inner">
-      <a href="#hero" class="brand">Sangam Shrestha</a>
+      <a href="https://shrestha-sangam.com.np" class="brand">Sangam Shrestha</a>
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -334,6 +334,15 @@
   </div>
 </section>
 
+ <!-- ===== Awards Section ===== -->
+ <section id="awards" class="section border-top">
+  <div class="container">
+    <h2>Awards & Activities</h2>
+    <div class="grid cols-2" id="awardGrid"></div>
+      <!-- Cards injected by JS below -->
+  </div>
+  </div>
+</section>
 
 
   <!-- ===== CONTACT ===== -->
@@ -381,9 +390,18 @@
      // { title: "Special Education PWA Initiative", summary: "Full‑stack PWA digitizing IEP workflows for 25+ schools with bilingual access (English/Marshallese), resilient offline support, and containerized AWS deployments.", bullets:["Built with ASP.NET MVC, role‑based access, audit logs","Google Cloud Translation API integration","Docker + AWS EC2, centralized logging via CloudWatch (−40% debug time)"], tech:["C#",".NET","JavaScript","Docker","AWS EC2","CloudWatch","PostgreSQL"], links:[{href:"#",label:"Case Study"}], image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" },
       //{ title: "Real Estate ERP System", summary: "Cross‑platform ERP for listings, transactions, and roles. Migrated monolith → microservices; infra to AWS; added multilingual Angular UI.", bullets:["Spring Boot + Hibernate microservices","Query time ↓ 15s → under 3s via SQL optimizations","JWT auth, RBAC, 1,000+ active listings, 500+/mo transactions"], tech:["Java","Spring Boot","Angular","MySQL","AWS (EC2, S3, RDS)","Docker"], links:[{href:"#",label:"Demo (internal)"}], image:"laptodesktop.avif" },
       { title: "Online Delivery Management System", summary: "Collaborated on the design and launch of a Progressive Web App (PWA) that digitized and centralized Individualized Education Programs (IEPs) for over 25 schools. Worked closely with educators and developers to build an offline-first architecture supporting regions with limited internet access. Integrated translation services and containerized deployment to deliver a scalable, reliable, and maintainable platform tailored to the needs of diverse school communities.", tech:["Java","Spring Boot","Angular","Mapbox","JWT"],  links:[{href:"https://github.com/sangamsthxa/OnlineDeliveryManagementSystem",label:"GitHub"}], image:"delivery.jpeg" },
-      { title: "Airline Reviews Sentiment (DistilBERT)", summary: "Analyzed a dataset of 23,000+ airline reviews using Natural Language Processing (NLP) with DistilBERT, achieving 84% sentiment classification accuracy. Designed preprocessing pipelines, fine-tuned the model, and evaluated performance metrics to ensure robust results. Extracted key factors such as seat type, value for money, and staff service to better understand customer sentiment patterns.", tech:["Python","Pandas","scikit‑learn"], links:[{href:"https://github.com/sthasangam/ML-Project",label:"GitHub"}], image:"plane.jpg" },
-      { title: "Predictive Layoff Risk Assessment", summary: "Developed a predictive model to estimate employee layoff risk by performing extensive data cleaning and feature engineering to uncover the key factors influencing layoff decisions. Evaluated multiple machine learning algorithms—including Random Forest, Decision Tree, Logistic Regression, Gradient Boosting, Support Vector Machine, and Neural Networks—to determine the most effective approach for accurate forecasting.", tech:["Python","Transformers","PyTorch"],links:[{href:"https://github.com/sangamsthxa/Sentiment-Analysis-on-Airline-Reviews",label:"GitHub"}], image:"predictive.avif" }
+      { title: "Airline Reviews Sentiment (DistilBERT)", summary: "Analyzed a dataset of 23,000+ airline reviews using Natural Language Processing (NLP) with DistilBERT, achieving 84% sentiment classification accuracy. Designed preprocessing pipelines, fine-tuned the model, and evaluated performance metrics to ensure robust results. Extracted key factors such as seat type, value for money, and staff service to better understand customer sentiment patterns.", tech:["Python","Pandas","scikit‑learn"], links:[{href:"https://github.com/sangamsthxa/Sentiment-Analysis-on-Airline-Reviews",label:"GitHub"}], image:"plane.jpg" },
+      { title: "Predictive Layoff Risk Assessment", summary: "Developed a predictive model to estimate employee layoff risk by performing extensive data cleaning and feature engineering to uncover the key factors influencing layoff decisions. Evaluated multiple machine learning algorithms—including Random Forest, Decision Tree, Logistic Regression, Gradient Boosting, Support Vector Machine, and Neural Networks—to determine the most effective approach for accurate forecasting.", tech:["Python","Transformers","PyTorch"],links:[{href:"https://github.com/sthasangam/ML-Project",label:"GitHub"}], image:"predictive.avif" }
     ];
+
+    const awards = [
+     // { title: "Special Education PWA Initiative", summary: "Full‑stack PWA digitizing IEP workflows for 25+ schools with bilingual access (English/Marshallese), resilient offline support, and containerized AWS deployments.", bullets:["Built with ASP.NET MVC, role‑based access, audit logs","Google Cloud Translation API integration","Docker + AWS EC2, centralized logging via CloudWatch (−40% debug time)"], tech:["C#",".NET","JavaScript","Docker","AWS EC2","CloudWatch","PostgreSQL"], links:[{href:"#",label:"Case Study"}], image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" },
+      //{ title: "Real Estate ERP System", summary: "Cross‑platform ERP for listings, transactions, and roles. Migrated monolith → microservices; infra to AWS; added multilingual Angular UI.", bullets:["Spring Boot + Hibernate microservices","Query time ↓ 15s → under 3s via SQL optimizations","JWT auth, RBAC, 1,000+ active listings, 500+/mo transactions"], tech:["Java","Spring Boot","Angular","MySQL","AWS (EC2, S3, RDS)","Docker"], links:[{href:"#",label:"Demo (internal)"}], image:"laptodesktop.avif" },
+      { title: "Academic Excellence Award, Aug 2022", image:"award.jpeg" },
+      { title: "Girls in ICT Hackathon - Top 4 (Smart Parking), Apr 2018", image:null },
+      { title: "U.S. Embassy TechCamp Bootcamp - Participant, Feb 2017(1-week)",image:null }
+    ];
+    
 
     const skills = [
       { title:"Backend", items:["Java (8/11/17/21)","Spring Boot","C#/.NET","REST, JPA/Hibernate","Microservices"] },
@@ -454,6 +472,24 @@
               <p>${p.summary}</p>
               <div class="chip-row">${p.tech.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
               <div class="link-row">${p.links.map(l=>`<a href="${l.href}" target="_blank">${l.label}</a>`).join('')}</div>
+            </div>
+          </article>`;
+      }).join('');
+      grid.innerHTML = html;
+    })();
+
+     // ===== Render Awards and Actvities =====
+     (function renderAwards(){
+      const grid = document.getElementById('awardGrid');
+      if (!grid) return;
+      const html = awards.map(p => {
+        const imgSrc = p.image ? p.image : 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80';
+        const img = `<img src="${imgSrc}" alt="${p.title}">`;
+        return `
+          <article class="card">
+            <div class="card-media" >${img}</div>
+            <div class="card-body">
+              <h3>${p.title}</h3>
             </div>
           </article>`;
       }).join('');
